@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator with JavaScript</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<header>
+   <h1>Calculadora para Planejamento de Enlaces Outdoor</h1> 
+</header>
+<body>
+    <div class="formula"> <h2>Shannon</h2>
+        <p>Largura de banda (Hz):
+            <input type="text" id="banda">
+        </p>
+        <p>Sinal-ruído (dB):
+            <input type="text" id="sn">
+        </p>
+        <button id="btn-shannon">Calcular</button>
+        <p id="output"></p>
+        <hr />
+    </div>
+    
+    <div class="formula"><h2> Nyquist </h2>
+        <p>Largura de banda (Hz):
+            <input type="text" id="bandaN">
+        </p>
+        <p>Mdodulação multinível: 
+            <input type="text" id="modulacao">
+        </p>
+        <button id="btn-nyquist">Calcular</button>
+        <p id="outputN"></p>
+        <hr />
+    </div>
+ 
+    <div class="formula"> <h2>Conversão de mW para dBm</h2>
+        <p>Potência em mW:
+            <input type="text" id="mw">
+        </p>
+        <button id="btn-conv1">Calcular</button>
+        <p id="outputmw"></p>
+        <hr />
+    </div>
+  
+    <div class="formula"> <h2>Conversão de dBm para mW</h2>
+        <p>Potência em dBm:
+            <input type="text" id="dbm">
+        </p>
+        <button id="btn-conv2">Calcular</button>
+        <p id="outputdbm"></p>
+        <hr />
+    </div>
+    
+    <div class="formula"> <h2>EIRP</h2>
+        <p>Potência de Transmissão (dBm): 
+            <input type="number" id="transmissao">
+        </p>
+        <p>Ganho da Antena (dBi):
+            <input type="number" id="ganho">
+        </p>
+        <p>GPerdas no Cabo (dB):
+            <input type="number" id="perdas">
+        </p>
+        <button id="btn-eirp">Calcular</button>
+        <p id="outputeirp"></p>
+        <hr />
+    </div>
+    
+    <div class="formula"> <h2>FSLP</h2>
+        <p>Distância (Km):
+            <input type="text" id="distancia">
+        </p>
+        <p> Frequência (MHz):
+            <input type="text" id="frequencia">
+        </p>
+        <button id="btn-fslp">Calcular</button>
+        <p id="outputfslp"></p>
+        <hr />
+    </div>
+    
+    <div class="formula"> <h2>RSL</h2>
+        <p>Potência de Transmissão (dBm):
+            <input type="number" id="ptransmissao">
+        </p>
+        <p>Ganho da Antena TX (dBi):
+            <input type="number" id="ganhotx"> 
+        </p>
+        <p>Perdas no Cabo TX (dB):
+            <input type="number" id="perdatx"> 
+        </p>
+        <p>Free Space Loss Path:
+            <input type="number" id="fslp"> 
+        </p>
+        <p>Ganho da Antena RX (dBi):
+            <input type="number" id="ganhorx"> 
+        </p>
+        <p>Perdas no Cabo RX (dB):
+            <input type="number" id="perdarx"> 
+        </p>
+        <button id="btn-rsl">Calcular</button>
+        <p id="outputrsl"></p>
+        <hr />
+    </div>
+
+    <div class="formula"> <h2>Fresnel Zone</h2>
+        <p>Distância do transmissor até o obstáculo (Km):
+            <input type="text" id="DAO"> 
+        </p>
+        <p>Distância do receptor até o obstáculo (Km):
+            <input type="text" id="DBO"> 
+        </p>
+        <p>Frequência (MHz):
+            <input type="text" id="F"> 
+        </p>
+        <p>Distância entre o transmissor e o receptor (Km):
+            <input type="text" id="D"> 
+        </p>
+        <button id="btn-fresnel">Calcular</button>
+        <p id="outputfresnel"></p>
+    </div>
+
+    <div class="footer">
+       Calculadora desenvolvida para a materia de Redes sem Fio
+       <br>
+       Aluna: Thamires Rodrigues Vessani
+    </div>
+    
+</body>
+</html>
