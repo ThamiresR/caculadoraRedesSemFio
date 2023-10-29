@@ -33,7 +33,7 @@ buttonNyquist.addEventListener('click', () => {
 
 let buttonconv1 = document.getElementById('btn-conv1');
 buttonconv1.addEventListener('click', () => {
-    const mw = parseInt(document.getElementById('mw').value);
+    const mw = parseFloat(document.getElementById('mw').value);
     const result = document.getElementById('outputmw');
 
     if(mw){
@@ -48,12 +48,12 @@ buttonconv1.addEventListener('click', () => {
 
 let buttonconv2 = document.getElementById('btn-conv2');
 buttonconv2.addEventListener('click', () => {
-    const dbm = parseInt(document.getElementById('dbm').value);
+    const dbm = parseFloat(document.getElementById('dbm').value);
     const result = document.getElementById('outputdbm');
 
     if(dbm){
         const calculo = (10**(dbm/10));
-        result.innerHTML ='Resposta: ' +(calculo.toFixed(2)) + ' mW';
+        result.innerHTML ='Resposta: ' +Math.round(calculo) + ' mW';
        
     }else{
         alert('Está faltando valores');
@@ -87,7 +87,6 @@ buttonfslp.addEventListener('click', () => {
     if(distancia && frequencia){
         const calculo = (32.4 + 20*Math.log10(distancia) + 20*Math.log10(frequencia));
         result.innerHTML = ('Resposta: ' +(calculo).toFixed(2) + ' dB');
-       
     }else{
         alert('Está faltando valores');
         result.innerHTML = '';
@@ -116,14 +115,22 @@ buttonrsl.addEventListener('click', () => {
 let buttonfresnel = document.getElementById('btn-fresnel');
 buttonfresnel.addEventListener('click', () => {
     const DAO = parseFloat(document.getElementById('DAO').value);
-    const DBO = parseFloat(document.getElementById('DBO').value);
-    const F = parseFloat(document.getElementById('F').value);
     const D = parseFloat(document.getElementById('D').value);
+    const F = parseFloat(document.getElementById('F').value);
     const result = document.getElementById('outputfresnel');
+    const resultminimo = document.getElementById('outputfresnelminimo');
+    const DBO = (D-DAO);
+
 
     if(DAO && DBO && F && D ){
         const calculo = ( 550 * (Math.sqrt(DAO * DBO / ( D * F ))));
-        result.innerHTML = ('Resposta: ' +calculo.toFixed(2) + ' m');    
+        result.innerHTML = ('Resposta: ' +calculo.toFixed(2) + ' m');
+        
+        if(F<3000){
+            resultminimo.innerHTML = ('Minimo: ' +(calculo*0.6).toFixed(2) + ' m');
+        }else{
+            resultminimo.innerHTML = ('O percentual minimo não se aplica');
+        }
     }else{
         alert('Está faltando valores');
         result.innerHTML = '';
